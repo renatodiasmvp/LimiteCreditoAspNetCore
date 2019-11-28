@@ -1,0 +1,170 @@
+﻿@model LimiteCreditoAspNetCore.Models.LIMITES_CREDITO_LIC
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LIMITES_CREDITO_LIC</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IDE_CONTRATO_TERCEIRO" class="control-label"></label>
+                <input asp-for="IDE_CONTRATO_TERCEIRO" class="form-control" />
+                <span asp-validation-for="IDE_CONTRATO_TERCEIRO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DAT_EXPIRA_LIMITE" class="control-label"></label>
+                <input asp-for="DAT_EXPIRA_LIMITE" class="form-control" type="date" />
+                <span asp-validation-for="DAT_EXPIRA_LIMITE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DES_OBSERVACAO" class="control-label"></label>
+                <input asp-for="DES_OBSERVACAO" class="form-control" />
+                <span asp-validation-for="DES_OBSERVACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QTD_PARCELAS_APROVACAO" class="control-label"></label>
+                <input asp-for="QTD_PARCELAS_APROVACAO" class="form-control" />
+                <span asp-validation-for="QTD_PARCELAS_APROVACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VLR_TOTAL_APROVACAO" class="control-label"></label>
+                <input asp-for="VLR_TOTAL_APROVACAO" class="form-control valor"  onkeyup="mask(this)" onblur="mask(this)"  />
+                <span asp-validation-for="VLR_TOTAL_APROVACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PER_TAXA_OPERACAO" class="control-label"></label>
+                <input asp-for="PER_TAXA_OPERACAO" class="form-control"  onkeyup="mask(this)" onblur="mask(this)" />
+                <span asp-validation-for="PER_TAXA_OPERACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VLR_TARIFA_OPERACAO" class="control-label"></label>
+                <input asp-for="VLR_TARIFA_OPERACAO" class="form-control"  onkeyup="mask(this)" onblur="mask(this)" />
+                <span asp-validation-for="VLR_TARIFA_OPERACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VLR_TOTAL_DESCONTOS" class="control-label"></label>
+                <input asp-for="VLR_TOTAL_DESCONTOS" class="form-control"  onkeyup="mask(this)" onblur="mask(this)" />
+                <span asp-validation-for="VLR_TOTAL_DESCONTOS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VLR_LIQUIDO_APROVACAO" class="control-label"></label>
+                <input asp-for="VLR_LIQUIDO_APROVACAO" class="form-control"  onkeyup="mask(this)" onblur="mask(this)" />
+                <span asp-validation-for="VLR_LIQUIDO_APROVACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NUM_PARCELA_INICIAL" class="control-label"></label>
+                <input asp-for="NUM_PARCELA_INICIAL" class="form-control" />
+                <span asp-validation-for="NUM_PARCELA_INICIAL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDE_MOTIVO" class="control-label"></label>
+                <input asp-for="IDE_MOTIVO" class="form-control" />
+                <span asp-validation-for="IDE_MOTIVO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LIS_SITUACAO" class="control-label"></label>
+                <input asp-for="LIS_SITUACAO" class="form-control" />
+                <span asp-validation-for="LIS_SITUACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOM_LOGIN_APROVACAO" class="control-label"></label>
+                <input asp-for="NOM_LOGIN_APROVACAO" class="form-control" />
+                <span asp-validation-for="NOM_LOGIN_APROVACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DAT_APROVACAO" class="control-label"></label>
+                <input asp-for="DAT_APROVACAO" class="form-control" type="date" />
+                <span asp-validation-for="DAT_APROVACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DES_APROVACAO" class="control-label"></label>
+                <input asp-for="DES_APROVACAO" class="form-control" />
+                <span asp-validation-for="DES_APROVACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="STS_LIMITE" class="control-label"></label>
+                <input asp-for="STS_LIMITE" class="form-control" />
+                <span asp-validation-for="STS_LIMITE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DAT_INCLUSAO" class="control-label"></label>
+                <input asp-for="DAT_INCLUSAO" class="form-control" type="date" />
+                <span asp-validation-for="DAT_INCLUSAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOM_LOGIN_INCLUSAO" class="control-label"></label>
+                <input asp-for="NOM_LOGIN_INCLUSAO" class="form-control" />
+                <span asp-validation-for="NOM_LOGIN_INCLUSAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NUM_IP_INCLUSAO" class="control-label"></label>
+                <input asp-for="NUM_IP_INCLUSAO" class="form-control" />
+                <span asp-validation-for="NUM_IP_INCLUSAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DAT_ALTERACAO" class="control-label"></label>
+                <input asp-for="DAT_ALTERACAO" class="form-control" type="date" />
+                <span asp-validation-for="DAT_ALTERACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NOM_LOGIN_ALTERACAO" class="control-label"></label>
+                <input asp-for="NOM_LOGIN_ALTERACAO" class="form-control" />
+                <span asp-validation-for="NOM_LOGIN_ALTERACAO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="https://unpkg.com/imask"></script>
+<script>
+        function mask() {
+            var valorTotalAprovacao = document.getElementById('VLR_TOTAL_APROVACAO');
+
+            var moneyMask = new IMask(valorTotalAprovacao, {
+                mask: '000.000,00',
+                lazy: false
+            });
+
+            var valorTarifaOperacao = document.getElementById('VLR_TARIFA_OPERACAO');
+
+            var moneyMask = new IMask(valorTarifaOperacao, {
+                mask: '000.000,00',
+                lazy: false
+            });
+
+            var valorTotalDescontos = document.getElementById('VLR_TOTAL_DESCONTOS');
+
+            var moneyMask = new IMask(valorTotalDescontos, {
+                mask: '000.000,00',
+                lazy: false
+            });
+
+            var valorLiquidoAprovacao = document.getElementById('VLR_LIQUIDO_APROVACAO');
+
+            var moneyMask = new IMask(valorLiquidoAprovacao, {
+                mask: '000.000,00',
+                lazy: false
+            });
+
+            var percentualTaxaOperacao = document.getElementById('PER_TAXA_OPERACAO');
+
+            var moneyMask = new IMask(percentualTaxaOperacao, {
+                mask: '000,00',
+                lazy: false
+            });
+        }
+
+</script>
